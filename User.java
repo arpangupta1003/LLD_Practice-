@@ -2,11 +2,9 @@
 class User{
     String name;
     String userId;
-    BalanceSheetController balanceSheetController;
     User(String name, String userId){
         this.name=name;
         this.userId=userId;
-        balanceSheetController= new BalanceSheetController();
     }
     public String getName() {
         return name;

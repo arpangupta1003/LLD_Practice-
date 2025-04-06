@@ -3,8 +3,11 @@ import java.util.*;
 public class BalanceSheet {
     Map<User,List<Pair>> balanceMap;
 
-    BalanceSheet(){
-        balanceMap=new HashMap<>();
+    private UserController userController;
+    
+    public BalanceSheet(UserController userController){
+        this.userController = userController;
+        balanceMap = new HashMap<>();
     }
 
     public void addBalance(User payedByUser, List<Split> splitDetails){
@@ -38,10 +41,14 @@ public class BalanceSheet {
         }
         else
         {
+            System.out.println("---------------");
+            System.out.println("for user "+user.name);
             List<Pair> balances=balanceMap.get(user);
             for(Pair p:balances){
-                System.out.println(p.userId+" owes "+p.amount);
+                System.out.println("\t"+userController.getUser(p.userId).name+" owes "+p.amount);
             }
+            System.out.println("---------------");
+
         }
     }
 
