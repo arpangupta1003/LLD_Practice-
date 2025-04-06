@@ -7,8 +7,14 @@ public class Main {
         generateUsers();
         List<Split> splitDetails = generateSplit();
         generateExpense(splitDetails);
-
-    }    
+        showBalance();
+        
+    }  
+    public static void showBalance() {
+        balanceSheetController.showBalanceSheet(userController.getUser("001"));  // for Arpan
+        // balanceSheetController.showBalanceSheet(userController.getUser("001"));  // for Arpan
+    }
+      
 
     public static void generateUsers(){
         User user1=new User("Arpan", "001");
